@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Nothing to show here... ☀️</title>
+
+    <script>
+      function nextPage() {
+        const userName = prompt("Enter your name:");
+
+        if (userName) {
+          console.log("User's name:", userName);
+          window.location.href = "yes.html";
+        }
+      }
+
+      function moveButton() {
+        var x =
+          Math.random() *
+            (window.innerWidth -
+              document.getElementById("noButton").offsetWidth) -
+          85;
+
+        var y =
+          Math.random() *
+            (window.innerHeight -
+              document.getElementById("noButton").offsetHeight) -
+          48;
+
+        document.getElementById("noButton").style.left = `${x}px`;
+        document.getElementById("noButton").style.top = `${y}px`;
+      }
+    </script>
+  </head>
+  <body
+    class="bg-slate-800 flex items-center justify-center h-screen text-zinc-100 flex-col relative"
+  >
+    <h1 class="text-3xl font-semibold">Do you wanna go out with me?</h1>
+
+    <img
+      src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExcDdtZ2JiZDR0a3lvMWF4OG8yc3p6Ymdvd3g2d245amdveDhyYmx6eCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9cw/cLS1cfxvGOPVpf9g3y/giphy.gif"
+      alt="Cute animated illustration"
+    />
+
+    <div class="flex items-center gap-8 mt-8 w-full justify-center">
+      <button
+        class="absolute mr-24 text-md font-semibold bg-emerald-500 px-4 h-10 rounded-md shadow-md"
+        id="yesButton"
+        onclick="nextPage()"
+      >
+        Yes
+      </button>
+
+      <button
+        class="absolute ml-24 text-md font-semibold bg-pink-500 px-4 h-10 rounded-md shadow-md"
+        id="noButton"
+        onmouseover="moveButton()"
+        onclick="moveButton()"
+      >
+        No
+      </button>
+    </div>
+  </body>
+</html>
